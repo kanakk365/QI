@@ -5,7 +5,7 @@ export const cursorsComponent: ComponentData = {
   description: "An interactive cursor tracking demo with smooth mouse following animations.",
   preview: () => import("@/components/ui/Cards/Cursors"),
   demo: `"use client";
-import CursorCard from "@/components/ui/Cursors";
+import CursorCard from "@/components/ui/Cards/Cursors";
 
 export function CursorsDemo() {
   return (
@@ -18,6 +18,7 @@ export function CursorsDemo() {
 import { MousePointer2, MousePointerClick } from "lucide-react";
 import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, easeInOut } from "motion/react";
+import { cn } from "@/lib/utils";
 
 function CursorCard() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -67,7 +68,6 @@ function CursorCard() {
 
     const isRight = mouseXVal > containerWidth * 0.5;
     const isBottom = mouseYVal > containerHeight * 0.5;
-    
     let cursor1TargetXVal, cursor1TargetYVal;
     if (!isRight && !isBottom) {
       cursor1TargetXVal = minX;
@@ -126,7 +126,6 @@ function CursorCard() {
       updateCursorPositions(x, y);
     }
   };
-  
   const handleMouseLeave = () => {
     setIsHovering(false);
     cursor1TargetX.set(50);
@@ -169,21 +168,26 @@ function CursorCard() {
       },
     },
   };
-  
   return (
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="bg-neutral-900 h-[26rem] w-[20rem] rounded-lg shadow-[0_-2px_4px_rgba(255,255,255,0.1),0_-8px_16px_rgba(255,255,255,0.05),0_-16px_32px_rgba(255,255,255,0.02)] relative overflow-hidden"
+      className={cn(
+        "h-[26rem] w-[20rem] rounded-lg relative overflow-hidden",
+        "bg-background dark:bg-neutral-900",
+        "shadow-[0_-2px_4px_rgba(0,0,0,0.1),0_-8px_16px_rgba(0,0,0,0.05),0_-16px_32px_rgba(0,0,0,0.02)]",
+        "dark:shadow-[0_-2px_4px_rgba(255,255,255,0.1),0_-8px_16px_rgba(255,255,255,0.05),0_-16px_32px_rgba(255,255,255,0.02)]",
+        "border border-border"
+      )}
     >
       <div
         className="absolute inset-0"
         style={{
           backgroundImage: \`
-            linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+            linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)
           \`,
           backgroundSize: "14px 14px",
           maskImage:
@@ -192,19 +196,49 @@ function CursorCard() {
             "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
         }}
       />
-      <div className="relative p-6 flex flex-col h-full">
-        <h1 className="text-base font-semibold text-neutral-100 mb-4 flex items-center gap-1">
+      <div
+        className="absolute inset-0 dark:hidden"
+        style={{
+          backgroundImage: \`
+            linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
+          \`,
+          backgroundSize: "14px 14px",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 hidden dark:block"
+        style={{
+          backgroundImage: \`
+            linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)
+          \`,
+          backgroundSize: "14px 14px",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
+        }}
+      />
+      <div className="relative p-6 flex flex-col h-full ">
+        {" "}
+        <h1 className="text-base  font-semibold text-foreground dark:text-neutral-100 mb-4 flex items-center gap-1">
+          {" "}
           <MousePointerClick size={17} />
           Interactive Demo
-        </h1>
+        </h1>{" "}
         <div>
-          <h2 className="text-sm text-neutral-100 mb-1">
+          <h2 className=" text-sm text-foreground dark:text-neutral-100  mb-1">
             Mouse tracking simulation
           </h2>
-          <p className="text-sm text-neutral-400">
+          <p className="text-sm text-muted-foreground dark:text-neutral-400">
             Dynamic cursor movement and interactions
           </p>
-        </div>
+        </div>{" "}
         <div className="flex-1 mt-2 relative">
           <motion.div
             className="absolute"
@@ -218,18 +252,18 @@ function CursorCard() {
             <MousePointer2
               strokeWidth={1}
               size={40}
-              className="text-neutral-500"
+              className="text-muted-foreground dark:text-neutral-500"
             />
             <motion.div
-              className="absolute -top-8 left-6 bg-neutral-800 text-neutral-100 px-2 py-1 rounded-lg text-xs whitespace-nowrap border border-neutral-700"
+              className="absolute -top-8 left-6 bg-muted dark:bg-neutral-800 text-foreground dark:text-neutral-100 px-2 py-1 rounded-lg text-xs whitespace-nowrap border border-border dark:border-neutral-700"
               variants={nameTagVariants}
               animate={isHovering ? "hover" : "idle"}
             >
-              User A
+              User A{" "}
             </motion.div>
           </motion.div>
           <motion.div
-            className="absolute"
+            className="absolute "
             style={{
               x: cursor2X,
               y: cursor2Y,
@@ -241,10 +275,10 @@ function CursorCard() {
             <MousePointer2
               strokeWidth={1}
               size={24}
-              className="text-neutral-500"
-            />
+              className="text-muted-foreground dark:text-neutral-500"
+            />{" "}
             <motion.div
-              className="absolute -top-8 left-6 bg-neutral-800 text-neutral-100 px-2 py-1 rounded-lg text-xs whitespace-nowrap border border-neutral-700"
+              className="absolute -top-8 left-6 bg-muted dark:bg-neutral-800 text-foreground dark:text-neutral-100 px-2 py-1 rounded-lg text-xs whitespace-nowrap border border-border dark:border-neutral-700"
               variants={nameTagVariants}
               animate={isHovering ? "hover" : "idle"}
             >
@@ -271,6 +305,7 @@ export default CursorCard;`,
 import { MousePointer2, MousePointerClick } from "lucide-react";
 import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, easeInOut } from "motion/react";
+import { cn } from "@/lib/utils";
 
 function CursorCard() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -320,7 +355,6 @@ function CursorCard() {
 
     const isRight = mouseXVal > containerWidth * 0.5;
     const isBottom = mouseYVal > containerHeight * 0.5;
-    
     let cursor1TargetXVal, cursor1TargetYVal;
     if (!isRight && !isBottom) {
       cursor1TargetXVal = minX;
@@ -379,7 +413,6 @@ function CursorCard() {
       updateCursorPositions(x, y);
     }
   };
-  
   const handleMouseLeave = () => {
     setIsHovering(false);
     cursor1TargetX.set(50);
@@ -422,21 +455,26 @@ function CursorCard() {
       },
     },
   };
-  
   return (
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="bg-neutral-900 h-[26rem] w-[20rem] rounded-lg shadow-[0_-2px_4px_rgba(255,255,255,0.1),0_-8px_16px_rgba(255,255,255,0.05),0_-16px_32px_rgba(255,255,255,0.02)] relative overflow-hidden"
+      className={cn(
+        "h-[26rem] w-[20rem] rounded-lg relative overflow-hidden",
+        "bg-background dark:bg-neutral-900",
+        "shadow-[0_-2px_4px_rgba(0,0,0,0.1),0_-8px_16px_rgba(0,0,0,0.05),0_-16px_32px_rgba(0,0,0,0.02)]",
+        "dark:shadow-[0_-2px_4px_rgba(255,255,255,0.1),0_-8px_16px_rgba(255,255,255,0.05),0_-16px_32px_rgba(255,255,255,0.02)]",
+        "border border-border"
+      )}
     >
       <div
         className="absolute inset-0"
         style={{
           backgroundImage: \`
-            linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+            linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)
           \`,
           backgroundSize: "14px 14px",
           maskImage:
@@ -445,19 +483,49 @@ function CursorCard() {
             "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
         }}
       />
-      <div className="relative p-6 flex flex-col h-full">
-        <h1 className="text-base font-semibold text-neutral-100 mb-4 flex items-center gap-1">
+      <div
+        className="absolute inset-0 dark:hidden"
+        style={{
+          backgroundImage: \`
+            linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
+          \`,
+          backgroundSize: "14px 14px",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 hidden dark:block"
+        style={{
+          backgroundImage: \`
+            linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)
+          \`,
+          backgroundSize: "14px 14px",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
+        }}
+      />
+      <div className="relative p-6 flex flex-col h-full ">
+        {" "}
+        <h1 className="text-base  font-semibold text-foreground dark:text-neutral-100 mb-4 flex items-center gap-1">
+          {" "}
           <MousePointerClick size={17} />
           Interactive Demo
-        </h1>
+        </h1>{" "}
         <div>
-          <h2 className="text-sm text-neutral-100 mb-1">
+          <h2 className=" text-sm text-foreground dark:text-neutral-100  mb-1">
             Mouse tracking simulation
           </h2>
-          <p className="text-sm text-neutral-400">
+          <p className="text-sm text-muted-foreground dark:text-neutral-400">
             Dynamic cursor movement and interactions
           </p>
-        </div>
+        </div>{" "}
         <div className="flex-1 mt-2 relative">
           <motion.div
             className="absolute"
@@ -471,18 +539,18 @@ function CursorCard() {
             <MousePointer2
               strokeWidth={1}
               size={40}
-              className="text-neutral-500"
+              className="text-muted-foreground dark:text-neutral-500"
             />
             <motion.div
-              className="absolute -top-8 left-6 bg-neutral-800 text-neutral-100 px-2 py-1 rounded-lg text-xs whitespace-nowrap border border-neutral-700"
+              className="absolute -top-8 left-6 bg-muted dark:bg-neutral-800 text-foreground dark:text-neutral-100 px-2 py-1 rounded-lg text-xs whitespace-nowrap border border-border dark:border-neutral-700"
               variants={nameTagVariants}
               animate={isHovering ? "hover" : "idle"}
             >
-              User A
+              User A{" "}
             </motion.div>
           </motion.div>
           <motion.div
-            className="absolute"
+            className="absolute "
             style={{
               x: cursor2X,
               y: cursor2Y,
@@ -494,10 +562,10 @@ function CursorCard() {
             <MousePointer2
               strokeWidth={1}
               size={24}
-              className="text-neutral-500"
-            />
+              className="text-muted-foreground dark:text-neutral-500"
+            />{" "}
             <motion.div
-              className="absolute -top-8 left-6 bg-neutral-800 text-neutral-100 px-2 py-1 rounded-lg text-xs whitespace-nowrap border border-neutral-700"
+              className="absolute -top-8 left-6 bg-muted dark:bg-neutral-800 text-foreground dark:text-neutral-100 px-2 py-1 rounded-lg text-xs whitespace-nowrap border border-border dark:border-neutral-700"
               variants={nameTagVariants}
               animate={isHovering ? "hover" : "idle"}
             >
@@ -512,7 +580,7 @@ function CursorCard() {
 
 export default CursorCard;`,
       language: "tsx",
-      filename: "components/ui/Cursors.tsx"
+      filename: "components/ui/Cards/Cursors.tsx"
     }
   ]
 }; 

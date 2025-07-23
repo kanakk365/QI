@@ -1,4 +1,13 @@
-"use client";
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  const component = {
+    name: "wave",
+    description: "An interactive wave animation component with smooth hover effects and dynamic wave patterns.",
+    files: [
+      {
+        name: "components/ui/wave.tsx",
+        content: `"use client";
 import React, { useRef, useEffect, useState } from "react";
 
 const WaveAnimation: React.FC = () => {
@@ -12,10 +21,9 @@ const WaveAnimation: React.FC = () => {
       ([entry]) => setIsVisible(entry.isIntersecting),
       { threshold: 0.2 }
     );
-    const currentContainer = containerRef.current;
-    if (currentContainer) observer.observe(currentContainer);
+    if (containerRef.current) observer.observe(containerRef.current);
     return () => {
-      if (currentContainer) observer.unobserve(currentContainer);
+      if (containerRef.current) observer.unobserve(containerRef.current);
     };
   }, []);
 
@@ -26,7 +34,7 @@ const WaveAnimation: React.FC = () => {
       segmentRefs.current.forEach((segment, t) => {
         if (segment) {
           r += Math.max(0, 20 * Math.sin((s + t) * 0.3));
-          segment.style.transform = `translateY(${t + r}px)`;
+          segment.style.transform = \`translateY(\${t + r}px)\`;
         }
       });
       s += 0.1;
@@ -53,9 +61,10 @@ const WaveAnimation: React.FC = () => {
       ref={(el) => {
         segmentRefs.current[s] = el;
       }}
-      className="wave-segment bg-gray-300 dark:bg-white"
+      className="wave-segment"
       style={{
-        height: `${s + 1}px`,
+        height: \`\${s + 1}px\`,
+        backgroundColor: "#ffffff",
         transition: "transform 0.1s ease",
         willChange: "transform",
         marginTop: "-2px",
@@ -78,4 +87,13 @@ const WaveAnimation: React.FC = () => {
   );
 };
 
-export default WaveAnimation;
+export default WaveAnimation;`
+      }
+    ],
+    dependencies: ["motion", "lucide-react"],
+    devDependencies: ["@types/react"],
+    registryDependencies: []
+  };
+
+  return NextResponse.json(component);
+} 

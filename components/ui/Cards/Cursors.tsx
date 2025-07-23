@@ -179,6 +179,34 @@ function CursorCard() {
             "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
         }}
       />
+      <div
+        className="absolute inset-0 dark:hidden"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: "14px 14px",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 hidden dark:block"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)
+          `,
+          backgroundSize: "14px 14px",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)",
+        }}
+      />
       <div className="relative p-6 flex flex-col h-full ">
         {" "}
         <h1 className="text-base  font-semibold text-foreground dark:text-neutral-100 mb-4 flex items-center gap-1">

@@ -1,16 +1,17 @@
-import { ComponentData } from '../types';
+import { ComponentData } from "../types";
 
 export const listComponent: ComponentData = {
   name: "List",
-  description: "A beautiful animated card component with hover effects and modern styling.",
+  description:
+    "A beautiful animated card component with hover effects and modern styling.",
   preview: () => import("@/components/ui/Cards/List"),
   demo: `"use client";
-import Arive from "@/components/ui/List";
+import List from "@/components/ui/List";
 
 export function ListDemo() {
   return (
     <div className="flex items-center justify-center min-h-[400px]">
-      <Arive 
+      <List 
         title="Custom Title" 
         description="This is a custom description for the card component."
       />
@@ -28,7 +29,7 @@ interface ListProps {
   description?: string;
 }
 
-function Arive({ title = "UI Component Library", description = "Beautifully designed components with smooth animations and modern styling for your next project." }: ListProps) {
+function List({ title = "UI Component Library", description = "Beautifully designed components with smooth animations and modern styling for your next project." }: ListProps) {
   return (
     <>
       <AnimatePresence>
@@ -128,7 +129,7 @@ function Arive({ title = "UI Component Library", description = "Beautifully desi
   );
 }
 
-export default Arive;
+export default List;
 
 // Export the props type for use in other components
 export type { ListProps };`,
@@ -136,8 +137,8 @@ export type { ListProps };`,
   manualSteps: [
     {
       title: "Install dependencies",
-      code: "npm i motion @tabler/icons-react lucide-react",
-      language: "bash"
+      code: "npm i motion @tabler/icons-react lucide-react clsx tailwind-merge",
+      language: "bash",
     },
     {
       title: "Add util file",
@@ -148,7 +149,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }`,
       language: "tsx",
-      filename: "lib/utils.ts"
+      filename: "lib/utils.ts",
     },
     {
       title: "Copy the source code",
@@ -163,7 +164,7 @@ interface ListProps {
   description?: string;
 }
 
-function Arive({ title = "UI Component Library", description = "Beautifully designed components with smooth animations and modern styling for your next project." }: ListProps) {
+function List({ title = "UI Component Library", description = "Beautifully designed components with smooth animations and modern styling for your next project." }: ListProps) {
   return (
     <>
       <AnimatePresence>
@@ -263,12 +264,12 @@ function Arive({ title = "UI Component Library", description = "Beautifully desi
   );
 }
 
-export default Arive;
+export default List;
 
 // Export the props type for use in other components
 export type { ListProps };`,
       language: "tsx",
-      filename: "components/ui/List.tsx"
-    }
-  ]
-}; 
+      filename: "components/ui/List.tsx",
+    },
+  ],
+};

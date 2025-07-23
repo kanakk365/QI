@@ -17,7 +17,7 @@ export function GraphDemo() {
   code: `"use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { useTheme } from "next-themes"
 
 export default function Graph() {
@@ -52,11 +52,6 @@ export default function Graph() {
           <text x="130" y="1185" textAnchor="end" fill={theme === 'dark' ? '#9ca3af' : '#6b7280'} fontSize="50" fontWeight="700">1M</text>
           <text x="130" y="1450" textAnchor="end" fill={theme === 'dark' ? '#9ca3af' : '#6b7280'} fontSize="50" fontWeight="700">$0</text>
           
-          {/* Y-axis grid lines */}
-          <line x1="150" y1="380" x2="1900" y2="380" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="150" y1="680" x2="1900" y2="680" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="150" y1="980" x2="1900" y2="980" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          
           {/* X-axis */}
           <line x1="150" y1="1450" x2="1900" y2="1450" stroke={theme === 'dark' ? '#374151' : '#e5e7eb'} strokeWidth="2" />
           
@@ -68,14 +63,6 @@ export default function Graph() {
           <text x="1450" y="1520" textAnchor="middle" fill={theme === 'dark' ? '#9ca3af' : '#6b7280'} fontSize="50" fontWeight="700">May</text>
           <text x="1750" y="1520" textAnchor="middle" fill={theme === 'dark' ? '#9ca3af' : '#6b7280'} fontSize="50" fontWeight="700">Jun</text>
           <text x="2000" y="1520" textAnchor="middle" fill={theme === 'dark' ? '#9ca3af' : '#6b7280'} fontSize="50" fontWeight="700">Jul</text>
-          
-          {/* X-axis grid lines */}
-          <line x1="350" y1="50" x2="350" y2="1450" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="650" y1="50" x2="650" y2="1450" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="950" y1="50" x2="950" y2="1450" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="1250" y1="50" x2="1250" y2="1450" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="1550" y1="50" x2="1550" y2="1450" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="1850" y1="50" x2="1850" y2="1450" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
 
           {/* Background filled area */}
           <motion.path
@@ -110,11 +97,11 @@ export default function Graph() {
     </div>
   )
 }`,
-  cli: "npm i framer-motion next-themes",
+  cli: "npm i motion/react next-themes",
   manualSteps: [
     {
       title: "Install dependencies",
-      code: "npm i framer-motion next-themes",
+      code: "npm i motion/react next-themes",
       language: "bash"
     },
     {
@@ -122,7 +109,7 @@ export default function Graph() {
       code: `"use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { useTheme } from "next-themes"
 
 export default function Graph() {
@@ -157,11 +144,6 @@ export default function Graph() {
           <text x="130" y="1185" textAnchor="end" fill={theme === 'dark' ? '#9ca3af' : '#6b7280'} fontSize="50" fontWeight="700">1M</text>
           <text x="130" y="1450" textAnchor="end" fill={theme === 'dark' ? '#9ca3af' : '#6b7280'} fontSize="50" fontWeight="700">$0</text>
           
-          {/* Y-axis grid lines */}
-          <line x1="150" y1="380" x2="1900" y2="380" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="150" y1="680" x2="1900" y2="680" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="150" y1="980" x2="1900" y2="980" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          
           {/* X-axis */}
           <line x1="150" y1="1450" x2="1900" y2="1450" stroke={theme === 'dark' ? '#374151' : '#e5e7eb'} strokeWidth="2" />
           
@@ -173,14 +155,6 @@ export default function Graph() {
           <text x="1450" y="1520" textAnchor="middle" fill={theme === 'dark' ? '#9ca3af' : '#6b7280'} fontSize="50" fontWeight="700">May</text>
           <text x="1750" y="1520" textAnchor="middle" fill={theme === 'dark' ? '#9ca3af' : '#6b7280'} fontSize="50" fontWeight="700">Jun</text>
           <text x="2000" y="1520" textAnchor="middle" fill={theme === 'dark' ? '#9ca3af' : '#6b7280'} fontSize="50" fontWeight="700">Jul</text>
-          
-          {/* X-axis grid lines */}
-          <line x1="350" y1="50" x2="350" y2="1450" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="650" y1="50" x2="650" y2="1450" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="950" y1="50" x2="950" y2="1450" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="1250" y1="50" x2="1250" y2="1450" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="1550" y1="50" x2="1550" y2="1450" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
-          <line x1="1850" y1="50" x2="1850" y2="1450" stroke={theme === 'dark' ? '#1f2937' : '#f3f4f6'} strokeWidth="1" />
 
           {/* Background filled area */}
           <motion.path

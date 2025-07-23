@@ -8,7 +8,7 @@ export interface ManualStep {
 export interface ComponentData {
   name: string;
   description: string;
-  preview: () => Promise<any>;
+  preview: () => Promise<unknown>;
   demo: string;
   code: string;
   cli: string;

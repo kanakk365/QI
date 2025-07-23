@@ -1,4 +1,13 @@
-"use client";
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  const component = {
+    name: "list",
+    description: "A beautiful animated card component with hover effects and modern styling.",
+    files: [
+      {
+        name: "components/ui/list.tsx",
+        content: `"use client";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Icon24Hours, Icon360, IconMessage } from "@tabler/icons-react";
@@ -111,5 +120,13 @@ function List({ title = "UI Component Library", description = "Beautifully desig
 
 export default List;
 
-// Export the props type for use in other components
-export type { ListProps };
+export type { ListProps };`
+      }
+    ],
+    dependencies: ["motion", "@tabler/icons-react", "lucide-react"],
+    devDependencies: ["@types/react"],
+    registryDependencies: []
+  };
+
+  return NextResponse.json(component);
+} 

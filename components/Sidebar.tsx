@@ -113,12 +113,7 @@ function AppSidebar() {
                   >
                     Graph
                   </Link>
-                  <Link
-                    className="group group relative flex w-full items-center rounded-md border border-transparent px-2 py-1 transition duration-200 hover:translate-x-1 hover:text-black dark:hover:text-white text-muted-foreground"
-                    href="/components/calendar"
-                  >
-                    Calendar
-                  </Link>
+                  
                 </div>
               </div>
               <div className="pb-4">
@@ -131,6 +126,19 @@ function AppSidebar() {
                     href="/components/wave"
                   >
                     Wave
+                  </Link>
+                </div>
+              </div>
+              <div className="pb-4">
+                <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-black dark:text-white">
+                  Components
+                </h4>
+                <div className="grid grid-flow-row auto-rows-max text-sm">
+                <Link
+                    className="group group relative flex w-full items-center rounded-md border border-transparent px-2 py-1 transition duration-200 hover:translate-x-1 hover:text-black dark:hover:text-white text-muted-foreground"
+                    href="/components/calendar"
+                  >
+                    Calendar
                   </Link>
                 </div>
               </div>

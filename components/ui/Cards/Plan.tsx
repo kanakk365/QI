@@ -40,7 +40,10 @@ function Plan() {
         </motion.h1>
         <motion.div
           animate={initialItems}
-          className="bg-accent dark:bg-neutral-700 text-muted-foreground dark:text-neutral-300 px-3 rounded-xl py-1 text-sm"
+          className={cn(
+            "text-muted-foreground dark:text-neutral-300 px-3 rounded-xl py-1 text-sm",
+            isHovered ? "bg-neutral-800" : "bg-accent dark:bg-neutral-700"
+          )}
         >
           /month
         </motion.div>
