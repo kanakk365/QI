@@ -7,6 +7,7 @@ export async function GET() {
     description: "An interactive cursor tracking demo with smooth mouse following animations.",
     files: [
       {
+        type: "registry:file",
         name: "components/ui/cursors.tsx",
         content: `"use client";
 import React, { useState, useEffect } from "react";

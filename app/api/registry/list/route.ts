@@ -7,6 +7,7 @@ export async function GET() {
     description: "A beautiful animated card component with hover effects and modern styling.",
     files: [
       {
+        type: "registry:file",
         name: "components/ui/list.tsx",
         content: `"use client";
 import { AnimatePresence, motion } from "motion/react";

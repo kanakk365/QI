@@ -7,6 +7,7 @@ export async function GET() {
     description: "An interactive wave animation component with smooth hover effects and dynamic wave patterns.",
     files: [
       {
+        type: "registry:file",
         name: "components/ui/wave.tsx",
         content: `"use client";
 import React, { useRef, useEffect, useState } from "react";

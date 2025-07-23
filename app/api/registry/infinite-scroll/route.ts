@@ -7,6 +7,7 @@ export async function GET() {
     description: "A smooth infinite scrolling component with animated content and hover interactions.",
     files: [
       {
+        type: "registry:file",
         name: "components/ui/infinite-scroll.tsx",
         content: `"use client";
 import { Hexagon, LogsIcon } from "lucide-react";

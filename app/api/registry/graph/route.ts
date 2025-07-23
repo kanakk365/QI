@@ -7,6 +7,7 @@ export async function GET() {
     description: "An interactive data visualization component with animated charts and dark mode support.",
     files: [
       {
+        type: "registry:file",
         name: "components/ui/graph.tsx",
         content: `"use client"
 

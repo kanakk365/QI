@@ -7,6 +7,7 @@ export async function GET() {
     description: "An interactive feature showcase with smooth animations and card transitions.",
     files: [
       {
+        type: "registry:file",
         name: "components/ui/feature-list.tsx",
         content: `"use client";
 import React, { useRef, useState } from "react";

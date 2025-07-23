@@ -7,6 +7,7 @@ export async function GET() {
     description: "A pricing plan card with hover animations and feature reveal effects.",
     files: [
       {
+        type: "registry:file",
         name: "components/ui/plan.tsx",
         content: `"use client";
 import { useState } from "react";

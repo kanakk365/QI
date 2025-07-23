@@ -7,6 +7,7 @@ export async function GET() {
     description: "A beautiful full-screen calendar component with event management and responsive design.",
     files: [
       {
+        type: "registry:file",
         name: "components/ui/calendar.tsx",
         content: `"use client"
 
@@ -75,6 +76,7 @@ Calendar.displayName = "Calendar"
 export { Calendar }`
       },
       {
+        type: "registry:file",
         name: "components/ui/full-screen-calendar.tsx",
         content: `"use client"
 
