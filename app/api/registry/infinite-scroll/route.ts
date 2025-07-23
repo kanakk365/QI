@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   const component = {
+    type: "registry:component",
     name: "infinite-scroll",
     description: "A smooth infinite scrolling component with animated content and hover interactions.",
     files: [

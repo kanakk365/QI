@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   const component = {
+    type: "registry:component",
     name: "wave",
     description: "An interactive wave animation component with smooth hover effects and dynamic wave patterns.",
     files: [

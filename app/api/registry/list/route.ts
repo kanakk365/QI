@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   const component = {
+    type: "registry:component",
     name: "list",
     description: "A beautiful animated card component with hover effects and modern styling.",
     files: [

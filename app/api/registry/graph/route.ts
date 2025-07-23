@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   const component = {
+    type: "registry:component",
     name: "graph",
     description: "An interactive data visualization component with animated charts and dark mode support.",
     files: [

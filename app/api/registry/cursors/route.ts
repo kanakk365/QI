@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   const component = {
+    type: "registry:component",
     name: "cursors",
     description: "An interactive cursor tracking demo with smooth mouse following animations.",
     files: [

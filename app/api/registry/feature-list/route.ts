@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   const component = {
+    type: "registry:component",
     name: "feature-list",
     description: "An interactive feature showcase with smooth animations and card transitions.",
     files: [

@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   const component = {
+    type: "registry:component",
     name: "calendar",
     description: "A beautiful full-screen calendar component with event management and responsive design.",
     files: [
