@@ -133,7 +133,7 @@ export default List;
 
 // Export the props type for use in other components
 export type { ListProps };`,
-  cli: "npm i motion @tabler/icons-react lucide-react",
+  cli: "npx shadcn@latest add https://qi.kanakk.me/r/list.json",
   manualSteps: [
     {
       title: "Install dependencies",

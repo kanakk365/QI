@@ -97,7 +97,7 @@ export default function Graph() {
     </div>
   )
 }`,
-  cli: "npm i motion/react next-themes",
+  cli: "npx shadcn@latest add https://qi.kanakk.me/r/graph.json",
   manualSteps: [
     {
       title: "Install dependencies",

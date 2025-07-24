@@ -95,7 +95,7 @@ const WaveAnimation: React.FC = () => {
 };
 
 export default WaveAnimation;`,
-  cli: "npm i motion lucide-react",
+  cli: "npx shadcn@latest add https://qi.kanakk.me/r/wave.json",
   manualSteps: [
     {
       title: "Install dependencies",

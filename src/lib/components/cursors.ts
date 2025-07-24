@@ -292,7 +292,7 @@ function CursorCard() {
 }
 
 export default CursorCard;`,
-  cli: "npm i motion lucide-react",
+  cli: "npx shadcn@latest add https://qi.kanakk.me/r/cursors.json",
   manualSteps: [
     {
       title: "Install dependencies",

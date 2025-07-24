@@ -19,8 +19,8 @@ import {
 import { ChevronLeftIcon, ChevronRightIcon, Search } from "lucide-react"
 
 import { cn } from "@/src/lib/utils"
-import { Button } from "@/src/components/appui/button"
-import { Separator } from "@/src/components/appui/separator"
+import { Button } from "@/src/components/ui/button"
+import { Separator } from "@/src/components/ui/separator"
 import { useMediaQuery } from "@/src/registry/default/hooks/useMediaQuery"
 
 interface Event {

@@ -330,7 +330,7 @@ export function FullScreenCalendar({ data }: FullScreenCalendarProps) {
     </div>
   )
 }`,
-  cli: "npm i date-fns lucide-react",
+  cli: "npx shadcn@latest add https://qi.kanakk.me/r/calendar.json",
   manualSteps: [
     {
       title: "Install dependencies",

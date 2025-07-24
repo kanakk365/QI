@@ -152,7 +152,7 @@ function InfiniteScroll() {
 }
 
 export default InfiniteScroll;`,
-  cli: "npm i motion lucide-react",
+  cli: "npx shadcn@latest add https://qi.kanakk.me/r/infinite-scroll.json",
   manualSteps: [
     {
       title: "Install dependencies",

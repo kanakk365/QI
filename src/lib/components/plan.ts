@@ -97,7 +97,7 @@ function Plan() {
 }
 
 export default Plan;`,
-  cli: "npm i motion",
+  cli: "npx shadcn@latest add https://qi.kanakk.me/r/plan.json",
   manualSteps: [
     {
       title: "Install dependencies",

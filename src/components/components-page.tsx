@@ -3,9 +3,9 @@
 import * as React from "react";
 import Link from "next/link";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/src/components/appui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
 import { AppSidebar } from "@/src/components/Sidebar";
-import { CodeBlock } from "@/src/components/appui/CodeBlock";
+import { CodeBlock } from "@/src/components/ui/CodeBlock";
 
 export function ComponentsPage({
   selectedComponent,

@@ -34,6 +34,10 @@
           "path": "src/registry/default/hooks/useMediaQuery.tsx",
           "type": "registry:hook"
         }
+      ],
+      "registryDependencies": [
+        "button",
+        "separator"
       ]
     },
     {
@@ -105,6 +109,9 @@
           "path": "src/registry/default/ui/List.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "button"
       ]
     },
     {
