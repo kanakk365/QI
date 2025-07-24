@@ -50,7 +50,7 @@ function Plan() {
         </motion.h1>
         <motion.div
           animate={initialItems}
-          className={isHovered ? "bg-neutral-800 text-neutral-300 px-3 rounded-xl py-1 text-sm" : "bg-neutral-700 text-neutral-300 px-3 rounded-xl py-1 text-sm"}
+          className={isHovered ? "dark:bg-neutral-800 text-neutral-300 px-3 rounded-xl py-1 text-sm" : "bg-neutral-700 text-neutral-300 px-3 rounded-xl py-1 text-sm"}
         >
           /month
         </motion.div>
