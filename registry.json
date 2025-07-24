@@ -140,6 +140,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "liquidball",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/default/ui/LiquidBall.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

@@ -70,6 +70,11 @@ export function ComponentsPage({
       name: "Calendar",
       description: "A beautiful full-screen calendar component with event management and responsive design.",
       href: "/components/calendar"
+    },
+    {
+      name: "LiquidBall",
+      description: "An animated liquid ball component with realistic water physics and customizable percentage display.",
+      href: "/components/liquidball"
     }
   ];
 

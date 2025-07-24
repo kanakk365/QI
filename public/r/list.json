@@ -7,6 +7,9 @@
     "@tabler/icons-react",
     "lucide-react"
   ],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "path": "src/registry/default/ui/List.tsx",

@@ -7,6 +7,7 @@ import { cursorsComponent } from './components/cursors';
 import { waveComponent } from './components/wave';
 import { graphComponent } from './components/graph';
 import { calendarComponent } from './components/calendar';
+import { liquidballComponent } from './components/liquidball';
 
 export const componentMap: Record<string, ComponentData> = {
   list: listComponent,
@@ -17,4 +18,5 @@ export const componentMap: Record<string, ComponentData> = {
   wave: waveComponent,
   graph: graphComponent,
   calendar: calendarComponent,
+  liquidball: liquidballComponent,
 }; 
