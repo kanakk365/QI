@@ -1,0 +1,138 @@
+{
+  "name": "sub-components",
+  "homepage": "https://qi.kanakk.me",
+  "items": [
+    {
+      "name": "index",
+      "type": "registry:style",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "devDependencies": [
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [],
+      "cssVars": {}
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "dependencies": [
+        "date-fns",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/default/ui/Calendar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/default/hooks/useMediaQuery.tsx",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "cursors",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/default/ui/Cursors.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "feature-list",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/default/ui/FeatureList.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "graph",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion/react",
+        "next-themes"
+      ],
+      "files": [
+        {
+          "path": "src/registry/default/ui/Graph.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "infinite-scroll",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/default/ui/InfiniteScroll.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "@tabler/icons-react",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/default/ui/List.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "plan",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/default/ui/Plan.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "wave",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/default/ui/Wave.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wave",
+  "type": "registry:ui",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/registry/default/ui/Wave.tsx",
+      "content": "\"use client\";\r\nimport React, { useRef, useEffect, useState } from \"react\";\r\n\r\nconst WaveAnimation: React.FC = () => {\r\n  const segmentRefs = useRef<(HTMLDivElement | null)[]>([]);\r\n  const containerRef = useRef<HTMLDivElement | null>(null);\r\n  const [isVisible, setIsVisible] = useState(false);\r\n  const animationRef = useRef<number | null>(null);\r\n\r\n  useEffect(() => {\r\n    const observer = new window.IntersectionObserver(\r\n      ([entry]) => setIsVisible(entry.isIntersecting),\r\n      { threshold: 0.2 }\r\n    );\r\n    const currentContainer = containerRef.current;\r\n    if (currentContainer) observer.observe(currentContainer);\r\n    return () => {\r\n      if (currentContainer) observer.unobserve(currentContainer);\r\n    };\r\n  }, []);\r\n\r\n  useEffect(() => {\r\n    let s = 0;\r\n    const animate = () => {\r\n      let r = 0;\r\n      segmentRefs.current.forEach((segment, t) => {\r\n        if (segment) {\r\n          r += Math.max(0, 20 * Math.sin((s + t) * 0.3));\r\n          segment.style.transform = `translateY(${t + r}px)`;\r\n        }\r\n      });\r\n      s += 0.1;\r\n      animationRef.current = requestAnimationFrame(animate);\r\n    };\r\n    if (isVisible) {\r\n      animate();\r\n    } else if (animationRef.current) {\r\n      cancelAnimationFrame(animationRef.current);\r\n      animationRef.current = null;\r\n    }\r\n    return () => {\r\n      if (animationRef.current) {\r\n        cancelAnimationFrame(animationRef.current);\r\n        animationRef.current = null;\r\n      }\r\n      s = 0;\r\n    };\r\n  }, [isVisible]);\r\n\r\n  const waveSegments = [...Array(23).keys()].map((s) => (\r\n    <div\r\n      key={s}\r\n      ref={(el) => {\r\n        segmentRefs.current[s] = el;\r\n      }}\r\n      className=\"wave-segment bg-gray-300 dark:bg-white\"\r\n      style={{\r\n        height: `${s + 1}px`,\r\n        transition: \"transform 0.1s ease\",\r\n        willChange: \"transform\",\r\n        marginTop: \"-2px\",\r\n      }}\r\n    />\r\n  ));\r\n\r\n  return (\r\n    <div className=\"w-screen bottom-0 flex items-end\">\r\n      <div\r\n        ref={containerRef}\r\n        id=\"waveContainer\"\r\n        aria-hidden=\"true\"\r\n        className=\"mt-8 w-full\"\r\n        style={{ height: \"200px\", overflow: \"hidden\" }}\r\n      >\r\n        <div style={{ marginTop: \"0px\" }}>{waveSegments}</div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default WaveAnimation;",
+      "type": "registry:ui"
+    }
+  ]
+}
