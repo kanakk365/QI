@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "QI",
-  description: "A showcase of QI UI components ",
+  description: "A showcase of QI components ",
   openGraph: {
     title: "QI ",
-    description: "A showcase of QI UI components ",
+    description: "A showcase of QI components ",
     images: [
       {
-        url: "/public/images/openGraph.png",
+        url: "/images/openGraph.png",
         width: 1200,
         height: 630,
         alt: "QI Open Graph Image"
