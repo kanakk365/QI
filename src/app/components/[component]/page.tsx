@@ -20,12 +20,6 @@ export default async function ComponentPage({
     if ("default" in moduleData && typeof moduleData.default === "function") {
       return moduleData.default as React.ComponentType;
     }
-    if ("Card" in moduleData && typeof moduleData.Card === "function") {
-      return moduleData.Card as React.ComponentType;
-    }
-    if ("Arive" in moduleData && typeof moduleData.Arive === "function") {
-      return moduleData.Arive as React.ComponentType;
-    }
     return undefined;
   })();
 

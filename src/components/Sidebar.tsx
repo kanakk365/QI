@@ -40,7 +40,7 @@ function AppSidebar() {
               </div>
 
               {/* Installation */}
-              <div className="pb-4">
+              {/* <div className="pb-4">
                 <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-black dark:text-white">
                   Installation
                 </h4>
@@ -70,7 +70,7 @@ function AppSidebar() {
                     CLI
                   </a>
                 </div>
-              </div>
+              </div> */}
 
               <div className="pb-4">
                 <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-black dark:text-white">

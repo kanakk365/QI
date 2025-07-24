@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
 import { IconBrandX } from "@tabler/icons-react";
@@ -17,7 +16,7 @@ const Navbar = () => {
               href="/"
             >
               <div className="flex flex-col">
-                <h1 className="text-black dark:text-white font-sans">
+                <h1 className="logo text-3xl text-black dark:text-white font-sans">
                   QI
                 </h1>
               </div>
@@ -31,33 +30,25 @@ const Navbar = () => {
           >
             <div className="relative flex h-8 w-8 items-center justify-center rounded-md border border-slate-800 dark:bg-[#0a0a0a] text-sm text-white antialiased md:h-6 md:w-6">
               <div className="absolute inset-x-0 -top-10 h-10 w-full rounded-full bg-white/[0.2] blur-xl"></div>
-              <div className="relative z-20 text-sm text-emerald-500">
-                <Image
-                  alt="Logo"
-                  width={50}
-                  height={50}
-                  src="/logo.png"
-                  className="w-full h-full object-contain"
-                />
+              <div className="logo relative z-20 text-sm text-emerald-500">
+                QI
               </div>
             </div>
           </Link>
 
-         
-
           {/* Right Side Actions */}
           <div className="flex flex-1 items-center justify-end gap-2 sm:gap-2 md:justify-end">
             {/* Twitter Link */}
+
+            {/* Theme Toggle Button */}
+            <ThemeToggle />
             <Link
               target="_blank"
               className="hover:text-foreground/80 text-foreground/60 text-sm font-medium transition-colors"
               href="https://twitter.com/kanak_k365"
             >
-             <IconBrandX />
+              <IconBrandX width="18" height="18" />
             </Link>
-
-            {/* Theme Toggle Button */}
-            <ThemeToggle />
 
             {/* Search Button */}
             {/* <button className="flex relative justify-start items-center text-sm text-muted-foreground dark:border-white/[0.2] py-2 w-fit border border-transparent shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] px-4 rounded-xl bg-white dark:bg-brand">
@@ -89,29 +80,21 @@ const Navbar = () => {
       </div>
       <div className="block lg:hidden">
         <div className="flex w-full items-center justify-between rounded-md px-4 py-4">
-          <Link className="flex items-center gap-1.5" href="/">
-            <Image
-              alt="Logo"
-              width={50}
-              height={50}
-              src="/logo.png"
-              className="h-6 w-6 object-contain"
-            />
+          <Link
+            className="flex items-center gap-1.5 font-semibold text-3xl logo"
+            href="/"
+          >
+            QI
           </Link>
           <div className="flex items-center gap-4">
             <ThemeToggle />
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 512 512"
-              className="h-6 w-6 text-black dark:text-white"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+            <Link
+              target="_blank"
+              className="hover:text-foreground/80 text-foreground/60 text-sm font-medium transition-colors"
+              href="https://twitter.com/kanak_k365"
             >
-              <path d="M432 176H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 272H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 368H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16z"></path>
-            </svg>
+              <IconBrandX width="20" height="20" />
+            </Link>
           </div>
         </div>
       </div>

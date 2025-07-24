@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
 import { AppSidebar } from "@/src/components/Sidebar";
@@ -34,47 +35,50 @@ export function ComponentsPage({
     {
       name: "List",
       description: "A beautiful animated card component with hover effects and modern styling.",
-      href: "/components/list"
+      href: "/components/list",
+      image: "/images/list.png"
     },
     {
       name: "Feature List",
       description: "An interactive feature showcase with smooth animations and card transitions.",
-      href: "/components/featurelist"
+      href: "/components/featurelist",
+      image: "/images/featureList.png"
     },
     {
       name: "Infinite Scroll",
       description: "A smooth infinite scrolling component with animated content and hover interactions.",
-      href: "/components/infinitescroll"
+      href: "/components/infinitescroll",
+      image: "/images/infiniteScroll.png"
     },
     {
       name: "Plan Card",
       description: "A pricing plan card with hover animations and feature reveal effects.",
-      href: "/components/plan"
+      href: "/components/plan",
+      image: "/images/plan.png"
     },
     {
       name: "Cursors",
       description: "An interactive cursor tracking demo with smooth mouse following animations.",
-      href: "/components/cursors"
-    },
-    {
-      name: "Wave",
-      description: "An interactive wave animation component with smooth hover effects and dynamic wave patterns.",
-      href: "/components/wave"
+      href: "/components/cursors",
+      image: "/images/cursors.png"
     },
     {
       name: "Graph",
       description: "An interactive data visualization component with animated charts and dark mode support.",
-      href: "/components/graph"
+      href: "/components/graph",
+      image: "/images/graph.png"
     },
     {
       name: "Calendar",
       description: "A beautiful full-screen calendar component with event management and responsive design.",
-      href: "/components/calendar"
+      href: "/components/calendar",
+      image: "/images/calendar.png"
     },
     {
-      name: "LiquidBall",
+      name: "Liquid Ball",
       description: "An animated liquid ball component with realistic water physics and customizable percentage display.",
-      href: "/components/liquidball"
+      href: "/components/liquidball",
+      image: "/images/liquidBall.png"
     }
   ];
 
@@ -92,24 +96,31 @@ export function ComponentsPage({
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                 {components.map((component) => (
                   <Link
                     key={component.name}
                     href={component.href}
-                    className="group block p-6 bg-card border border-border rounded-lg hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
+                    className="group antialiased"
                   >
-                    <div className="flex flex-col space-y-2">
-                      <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                        {component.name}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {component.description}
-                      </p>
-                      <div className="flex items-center text-primary text-sm font-medium pt-2">
-                        View Component →
-                      </div>
+                    <div className="relative overflow-hidden rounded-lg transition duration-200 group-hover:shadow-xl dark:border dark:border-white/[0.1]">
+                      <Image
+                        alt={`${component.name} Component Thumbnail`}
+                        loading="lazy"
+                        width={1024}
+                        height={1020}
+                        decoding="async"
+                        className="transition duration-300 blur-0 rounded-md group-hover:scale-105"
+                        src={component.image}
+                        style={{ color: 'transparent' }}
+                      />
                     </div>
+                    <p className="mt-4 mb-2 text-xl font-bold text-neutral-700 dark:text-neutral-100">
+                      {component.name}
+                    </p>
+                    <p className="mt-2 text-sm font-normal text-neutral-500 dark:text-neutral-300">
+                      {component.description}
+                    </p>
                   </Link>
                 ))}
               </div>

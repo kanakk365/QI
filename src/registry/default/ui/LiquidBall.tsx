@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 
-export default function LiquidBall({ initialPercentage = 75, size = 80 }) {
+export default function LiquidBall({ initialPercentage = 75, size = 100 }) {
   const [percentage, setPercentage] = useState(initialPercentage)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)

@@ -1,8 +1,9 @@
-import { ComponentData } from '../types';
+import { ComponentData } from "../types";
 
 export const calendarComponent: ComponentData = {
   name: "Calendar",
-  description: "A beautiful full-screen calendar component with event management, responsive design, and modern UI.",
+  description:
+    "A beautiful full-screen calendar component with event management, responsive design, and modern UI.",
   preview: () => import("@/src/registry/default/ui/Calendar"),
   demo: `import { FullScreenCalendar } from "@/src/components/ui/Calendar"
 
@@ -335,7 +336,40 @@ export function FullScreenCalendar({ data }: FullScreenCalendarProps) {
     {
       title: "Install dependencies",
       code: "npm i date-fns lucide-react",
-      language: "bash"
+      language: "bash",
+    },
+    {
+      title: "Create the useMediaQuery Hook",
+      filename: "components/hooks/useMediaQuery.tsx",
+      code: `"use client"
+      
+      import { useEffect, useState } from "react"
+      
+      export function useMediaQuery(query: string): boolean {
+        const [matches, setMatches] = useState(false)
+      
+        useEffect(() => {
+          const media = window.matchMedia(query)
+      
+          // Set initial value
+          setMatches(media.matches)
+      
+          // Update matches when media query changes
+          const listener = (event: MediaQueryListEvent) => {
+            setMatches(event.matches)
+          }
+      
+          media.addEventListener("change", listener)
+      
+          return () => {
+            media.removeEventListener("change", listener)
+          }
+        }, [query])
+      
+        return matches
+      }
+      `,
+      language: "tsx",
     },
     {
       title: "Create the Calendar component",
@@ -647,30 +681,7 @@ export function FullScreenCalendar({ data }: FullScreenCalendarProps) {
     </div>
   )
 }`,
-      language: "tsx"
+      language: "tsx",
     },
-    {
-      title: "Use the component",
-      code: `import { FullScreenCalendar } from "@/src/components/ui/Calendar"
-
-const calendarData = [
-  {
-    day: new Date(2024, 0, 15),
-    events: [
-      {
-        id: 1,
-        name: "Team Meeting",
-        time: "9:00 AM",
-        datetime: "2024-01-15T09:00:00"
-      }
-    ]
-  }
-]
-
-function MyCalendar() {
-  return <FullScreenCalendar data={calendarData} />
-}`,
-      language: "tsx"
-    }
-  ]
-}; 
+  ],
+};
