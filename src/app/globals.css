@@ -3,7 +3,7 @@
 @import "tw-animate-css";
 /* QI Logo Font Style */
 .logo {
-  font-family: 'Bitcount Prop Single', 'EB Garamond', 'Nunito', serif, sans-serif;
+  font-family: 'Bitcount Prop Single',  serif, sans-serif;
 }
 
 @custom-variant dark (&:is(.dark *));
