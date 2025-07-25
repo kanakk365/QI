@@ -786,8 +786,8 @@ export const LiquidGlassBackground: React.FC<LiquidGlassBackgroundProps> = ({ wi
         ref={containerRef}
         className={\`absolute inset-0 \${className}\`}
         style={{
-          backdropFilter: \`url(#\${filterId}) blur(0.25px) brightness(1.5) saturate(1.1)\`,
-          WebkitBackdropFilter: \`url(#\${filterId}) blur(0.25px) brightness(1.5) saturate(1.1)\`,
+          backdropFilter: \`url(#\${filterId}) blur(4px) brightness(1.5) saturate(1.1)\`,
+          WebkitBackdropFilter: \`url(#\${filterId}) blur(4px) brightness(1.5) saturate(1.1)\`,
           boxShadow: \`
             0 4px 8px rgba(0, 0, 0, 0.25),
             0 -10px 25px inset rgba(0, 0, 0, 0.15),
