@@ -8,6 +8,7 @@ import { waveComponent } from './components/wave';
 import { graphComponent } from './components/graph';
 import { calendarComponent } from './components/calendar';
 import { liquidballComponent } from './components/liquidball';
+import { glassNavbarComponent } from './components/glass-navbar';
 
 export const componentMap: Record<string, ComponentData> = {
   list: listComponent,
@@ -19,4 +20,5 @@ export const componentMap: Record<string, ComponentData> = {
   graph: graphComponent,
   calendar: calendarComponent,
   liquidball: liquidballComponent,
+  glassnavbar: glassNavbarComponent,
 }; 

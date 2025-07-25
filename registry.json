@@ -153,6 +153,24 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "glass-navbar",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "next/link"
+      ],
+      "files": [
+        {
+          "path": "src/registry/default/ui/GlassNavbar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/default/ui/liquidGlassBackground.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
