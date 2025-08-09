@@ -22,12 +22,15 @@ export function GlassNavbarDemo() {
 import { useState, useEffect } from "react";
 import type React from "react";
 import { motion } from "motion/react";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import { LiquidGlassBackground } from "./liquidGlassBackground";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,8 +79,8 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const Logo = () => (
-    <Link href="/" className="font-normal flex space-x-2 items-center text-sm mr-4 text-white px-2 py-1 relative z-20">
-      <span className="font-medium text-white">QI</span>
+    <Link href="/" className="font-normal flex space-x-2 items-center text-sm mr-4 text-black dark:text-white px-2 py-1 relative z-20">
+      <span className="font-medium text-black dark:text-white">QI</span>
     </Link>
   );
 
@@ -93,24 +96,24 @@ const Navbar = () => {
   };
 
   const NavLinks = () => (
-    <div className="lg:flex flex-row flex-1 absolute inset-0 hidden items-center justify-center space-x-2 lg:space-x-2 text-sm text-zinc-300 font-medium hover:text-zinc-100 transition duration-300">
+    <div className="lg:flex flex-row flex-1 absolute inset-0 hidden items-center justify-center space-x-2 lg:space-x-2 text-sm text-black dark:text-zinc-300 font-medium hover:text-black dark:hover:text-zinc-100 transition duration-300">
       <Link
         href="/#about"
-        className="text-neutral-300 relative px-4 py-2 hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
+        className="text-black dark:text-neutral-300 relative px-4 py-2 hover:text-black dark:hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
         onClick={(e) => handleSmoothScroll(e, "#about")}
       >
         <span className="relative z-20">About</span>
       </Link>
       <Link
         href="/#projects"
-        className="text-neutral-300 relative px-4 py-2 hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
+        className="text-black dark:text-neutral-300 relative px-4 py-2 hover:text-black dark:hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
         onClick={(e) => handleSmoothScroll(e, "#projects")}
       >
         <span className="relative z-20">Projects</span>
       </Link>
       <Link
         href="/#contact"
-        className="text-neutral-300 relative px-4 py-2 hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
+        className="text-black dark:text-neutral-300 relative px-4 py-2 hover:text-black dark:hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
         onClick={(e) => handleSmoothScroll(e, "#contact")}
       >
         <span className="relative z-20">Contact</span>
@@ -147,7 +150,7 @@ const Navbar = () => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className={\`tabler-icon text-white transition-transform duration-200 \${isMobileMenuOpen ? "rotate-90" : ""}\`}
+          className={\`tabler-icon text-black dark:text-white transition-transform duration-200 \${isMobileMenuOpen ? "rotate-90" : ""}\`}
       >
         {isMobileMenuOpen ? (
           <>
@@ -183,7 +186,7 @@ const Navbar = () => {
       <div className="flex flex-col p-4 space-y-4 relative z-10">
         <Link
           href="/#about"
-          className="text-neutral-300 px-4 py-3 hover:text-neutral-100 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
+          className="text-black dark:text-neutral-300 px-4 py-3 hover:text-black dark:hover:text-neutral-100 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
           onClick={(e) => {
             handleSmoothScroll(e, "#about");
             setIsMobileMenuOpen(false);
@@ -193,7 +196,7 @@ const Navbar = () => {
         </Link>
         <Link
           href="/#projects"
-          className="text-neutral-300 px-4 py-3 hover:text-neutral-100 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
+          className="text-black dark:text-neutral-300 px-4 py-3 hover:text-black dark:hover:text-neutral-100 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
           onClick={(e) => {
             handleSmoothScroll(e, "#projects");
             setIsMobileMenuOpen(false);
@@ -203,7 +206,7 @@ const Navbar = () => {
         </Link>
         <Link
           href="/#contact"
-          className="text-neutral-300 px-4 py-3 hover:text-neutral-100 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
+          className="text-black dark:text-neutral-300 px-4 py-3 hover:text-black dark:hover:text-neutral-100 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
           onClick={(e) => {
             handleSmoothScroll(e, "#contact");
             setIsMobileMenuOpen(false);
@@ -247,7 +250,7 @@ const Navbar = () => {
           willChange: "auto",
         }}
         animate={{
-          boxShadow: isScrolled
+          boxShadow: isScrolled && isDark
             ? "rgba(0, 0, 0, 0.3) 0px 8px 32px, rgba(0, 0, 0, 0.2) 0px 4px 16px, rgba(34, 42, 53, 0.25) 0px 2px 8px, rgba(47, 48, 55, 0.2) 0px 32px 120px, rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(34, 42, 53, 0.7) 0px 0px 0px 1px"
             : "none",
           transform: isScrolled ? "translateY(20px)" : "none",
@@ -276,7 +279,7 @@ const Navbar = () => {
           borderRadius: "2rem",
         }}
         animate={{
-          boxShadow: isScrolled
+          boxShadow: isScrolled && isDark
             ? "rgba(0, 0, 0, 0.4) 0px 8px 32px, rgba(0, 0, 0, 0.25) 0px 4px 16px, rgba(34, 42, 53, 0.3) 0px 2px 8px, rgba(47, 48, 55, 0.25) 0px 24px 80px, rgba(255, 255, 255, 0.15) 0px 1px 0px inset, rgba(34, 42, 53, 0.6) 0px 0px 0px 1px"
             : "none",
           width: isScrolled ? "90%" : "100%",
@@ -366,8 +369,8 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const Logo = () => (
-    <Link href="/" className="font-normal flex space-x-2 items-center text-sm mr-4 text-white px-2 py-1 relative z-20">
-      <span className="font-medium text-white">QI</span>
+    <Link href="/" className="font-normal flex space-x-2 items-center text-sm mr-4 text-black dark:text-white px-2 py-1 relative z-20">
+      <span className="font-medium text-black dark:text-white">QI</span>
     </Link>
   );
 
@@ -383,24 +386,24 @@ const Navbar = () => {
   };
 
   const NavLinks = () => (
-    <div className="lg:flex flex-row flex-1 absolute inset-0 hidden items-center justify-center space-x-2 lg:space-x-2 text-sm text-zinc-300 font-medium hover:text-zinc-100 transition duration-300">
+    <div className="lg:flex flex-row flex-1 absolute inset-0 hidden items-center justify-center space-x-2 lg:space-x-2 text-sm text-black dark:text-zinc-300 font-medium hover:text-black dark:hover:text-zinc-100 transition duration-300">
       <Link
         href="/#about"
-        className="text-neutral-300 relative px-4 py-2 hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
+        className="text-black dark:text-neutral-300 relative px-4 py-2 hover:text-black dark:hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
         onClick={(e) => handleSmoothScroll(e, "#about")}
       >
         <span className="relative z-20">About</span>
       </Link>
       <Link
         href="/#projects"
-        className="text-neutral-300 relative px-4 py-2 hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
+        className="text-black dark:text-neutral-300 relative px-4 py-2 hover:text-black dark:hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
         onClick={(e) => handleSmoothScroll(e, "#projects")}
       >
         <span className="relative z-20">Projects</span>
       </Link>
       <Link
         href="/#contact"
-        className="text-neutral-300 relative px-4 py-2 hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
+        className="text-black dark:text-neutral-300 relative px-4 py-2 hover:text-black dark:hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
         onClick={(e) => handleSmoothScroll(e, "#contact")}
       >
         <span className="relative z-20">Contact</span>
@@ -437,7 +440,7 @@ const Navbar = () => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className={\`tabler-icon text-white transition-transform duration-200 \${isMobileMenuOpen ? "rotate-90" : ""}\`}
+        className={\`tabler-icon text-black dark:text-white transition-transform duration-200 \${isMobileMenuOpen ? "rotate-90" : ""}\`}
       >
         {isMobileMenuOpen ? (
           <>
@@ -473,7 +476,7 @@ const Navbar = () => {
       <div className="flex flex-col p-4 space-y-4 relative z-10">
         <Link
           href="/#about"
-          className="text-neutral-300 px-4 py-3 hover:text-neutral-100 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
+          className="text-black dark:text-neutral-300 px-4 py-3 hover:text-black dark:hover:text-neutral-100 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
           onClick={(e) => {
             handleSmoothScroll(e, "#about");
             setIsMobileMenuOpen(false);
@@ -483,7 +486,7 @@ const Navbar = () => {
         </Link>
         <Link
           href="/#projects"
-          className="text-neutral-300 px-4 py-3 hover:text-neutral-100 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
+          className="text-black dark:text-neutral-300 px-4 py-3 hover:text-black dark:hover:text-neutral-100 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
           onClick={(e) => {
             handleSmoothScroll(e, "#projects");
             setIsMobileMenuOpen(false);
@@ -493,7 +496,7 @@ const Navbar = () => {
         </Link>
         <Link
           href="/#contact"
-          className="text-neutral-300 px-4 py-3 hover:text-neutral-100 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
+          className="text-black dark:text-neutral-300 px-4 py-3 hover:text-black dark:hover:text-neutral-100 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
           onClick={(e) => {
             handleSmoothScroll(e, "#contact");
             setIsMobileMenuOpen(false);
