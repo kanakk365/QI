@@ -72,7 +72,7 @@
       "name": "graph",
       "type": "registry:ui",
       "dependencies": [
-        "motion/react",
+        "motion",
         "next-themes"
       ],
       "files": [
@@ -158,7 +158,7 @@
       "name": "wavy-circle",
       "type": "registry:ui",
       "dependencies": [
-        "motion/react"
+        "motion"
       ],
       "files": [
         {

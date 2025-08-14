@@ -3,7 +3,7 @@
   "name": "graph",
   "type": "registry:ui",
   "dependencies": [
-    "motion/react",
+    "motion",
     "next-themes"
   ],
   "files": [
