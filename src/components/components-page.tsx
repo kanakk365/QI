@@ -79,6 +79,12 @@ export function ComponentsPage({
       description: "An animated liquid ball component with realistic water physics and customizable percentage display.",
       href: "/components/liquidball",
       image: "/images/liquidBall.png"
+    },
+    {
+      name: "Wavy Circle",
+      description: "A radial wavy bar animation that reacts to cursor angle with smooth scaling.",
+      href: "/components/wavycircle",
+      image: "/images/wave.png"
     }
   ];
 

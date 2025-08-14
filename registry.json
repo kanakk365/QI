@@ -155,6 +155,19 @@
       ]
     },
     {
+      "name": "wavy-circle",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/default/ui/WavyCircle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "glass-navbar",
       "type": "registry:ui",
       "dependencies": [

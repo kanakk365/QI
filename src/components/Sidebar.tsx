@@ -133,6 +133,12 @@ function AppSidebar() {
                   >
                     LiquidBall
                   </Link>
+                  <Link
+                    className="group group relative flex w-full items-center rounded-md border border-transparent px-2 py-1 transition duration-200 hover:translate-x-1 hover:text-black dark:hover:text-white text-muted-foreground"
+                    href="/components/wavycircle"
+                  >
+                    Wavy Circle
+                  </Link>
                 </div>
               </div>
               <div className="pb-4">
