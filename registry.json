@@ -184,6 +184,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "profile-card",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/default/ui/ProfileCard.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

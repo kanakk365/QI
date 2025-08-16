@@ -113,6 +113,12 @@ function AppSidebar() {
                   >
                     Graph
                   </Link>
+                  <Link
+                    className="group group relative flex w-full items-center rounded-md border border-transparent px-2 py-1 transition duration-200 hover:translate-x-1 hover:text-black dark:hover:text-white text-muted-foreground"
+                    href="/components/profilecard"
+                  >
+                    Profile Card
+                  </Link>
                   
                 </div>
               </div>
