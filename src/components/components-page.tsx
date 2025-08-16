@@ -80,12 +80,6 @@ export function ComponentsPage({
       href: "/components/liquidball",
       image: "/images/liquidBall.png"
     },
-    {
-      name: "Wavy Circle",
-      description: "A radial wavy bar animation that reacts to cursor angle with smooth scaling.",
-      href: "/components/wavycircle",
-      image: "/images/wave.png"
-    }
   ];
 
   if (!selectedComponent) {
